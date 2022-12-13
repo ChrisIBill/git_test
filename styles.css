@@ -1,10 +1,14 @@
 /* styles.css */
-/* Defines all divs to be blue */
+/* Type-selector
+    Defines all divs to be blue
+*/
 div {
     color: blue;
 }
 
-/* Defines both alert-text and unread */
+/* Class selector
+    Defines both alert-text and unread
+*/
 .alert-text, .unread {
     color: red;
 }
@@ -16,7 +20,9 @@ div {
     background-color: aqua;
 }
 
-/* ID vs Class, dont really understand */
+/* ID selector
+    ID vs Class, dont really understand
+*/
 #title {
     background-color: green;
 }
@@ -42,3 +48,78 @@ div {
 .ancestor .child {
     background-color: maroon;
 }
+/* Some basic properties */
+p {
+    /* hex example
+        #RRGGBB
+        R: Red, G: Green, B: Blue
+        Hex values so 0 to f
+    */
+    color: #1100ff;
+    /* hex example w/ transparency (also hex 00: transparent, ff: opaque)*/
+    color: #1100ff80;
+    /* rgb example
+        (red, green, blue)
+    */
+    color: rgb(100, 0, 127);
+    /* rgba example (adds transparency 0.0 transparent, 1.0 opaque)*/
+    color: rgba(100, 0, 127, 0.3);
+    /* hsl example
+        hsl(hue, saturation, lightness)
+    Hue is a degree on the color wheel (from 0 to 360):
+        0 (or 360) is red, 120 is green, 240 is blue.
+    Saturation is a percentage value;
+        0% means a shade of gray and 100% is the full color.
+    Lightness is also a percentage; 0% is black, 100% is white.
+    */
+    color: hsl(15, 82%, 56%);
+    /* hsla example (transparency added: 0.0 transparent, 1.0 opaque)*/
+    color: hsla(15, 82%, 56%, 1.0);
+    /* Actually setting the stuff */
+    color: #000000;
+    background-color: #aaaaaa50;
+    /* Current color, currently what was set with hsla */
+    border: 10px solid currentColor;
+
+    /* Fonts */
+    /* Font families, can be single value*/
+    font-family: "Times New Roman";
+    /* Or comma separated list
+        If list, browser will attempt to use each font, if it cant use/find, moves to next
+        "font family names" will be in quotes, generic family names wont be
+    */
+    font-family: "Times New Roman", sans-serif;
+    
+    font-size: 22px;
+
+    /* Font weight
+        Can be keyword such as bold, or number between 0 and 1000    
+    */
+    font-weight: lighter;
+    font-weight: 1000;
+    /* Text alignment
+        Justify makes all characters same length so lines will 'line' up
+    */
+    text-align: justify;
+    direction: rtl;
+}
+/* Changes style of imgs */
+img {
+    height: auto;
+    width: 400px;
+}
+/* Specificity 
+    Prio list
+        ID selector
+        Class Selector
+        Type selector
+    A selector w/ prio will beat any number of lower selectors
+    More selectors at same prio beats less selectors
+    Chaining vs Combinators are equal
+    If all else fails, last defined wins
+*/
+/* Inheritance
+    Typography based properties
+        color, font-size, font-family, etc. get inherited
+    Most others dont
+*/

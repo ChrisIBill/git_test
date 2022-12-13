@@ -15,7 +15,7 @@
     <h4>This is a heading 4</h4>
     <h5>This is a heading 5</h5>
     <h6>This is a heading 6</h6>
-    <p>Hello!</p>
+    <p>This is a paragraph in the body</p>
     <!--Unordered List-->
     <ul>
         <li>Stuff 1</li>
@@ -50,5 +50,17 @@
         <!--Does not get child styling-->
         <p>Child outside of ancestor?</p>
     </div>
+    <!--Internal CSS-->
+    <style>
+        div {
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <div>
+        Internally defined CSS
+    </div>
+    <!--Internal Inline CSS-->
+    <div style="color: white; background-color: black;">Inline Internal CSS</div>
 </body>
 </html>
