@@ -2,69 +2,74 @@
 /* Type-selector
     Defines all divs to be blue
 */
+* {
+  border: 2px solid red;
+}
 div {
-    color: blue;
+  color: blue;
 }
 
 /* Class selector
     Defines both alert-text and unread
 */
-.alert-text, .unread {
-    color: red;
+.alert-text,
+.unread {
+  color: red;
 }
 /* Defines just alert-text */
 .alert-text {
-    background-color: black;
+  background-color: black;
 }
 .unread {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 /* ID selector
     ID vs Class, dont really understand
 */
 #title {
-    background-color: green;
+  background-color: green;
 }
 
 /* Unchained selector */
 .subsection {
-    background-color: gray;
+  background-color: gray;
 }
 /* Chained selector */
 .subsection.header {
-    color: purple;
+  color: purple;
 }
 
 /* Chained selector w/ ID instead of class */
 .subsection#preview {
-    color: green;
+  color: green;
 }
 
 /* Descendant Combinator */
 .ancestor {
-    color: black;
+  color: black;
 }
 .ancestor .child {
-    background-color: maroon;
+  background-color: maroon;
 }
+
 /* Some basic properties */
 p {
-    /* hex example
+  /* hex example
         #RRGGBB
         R: Red, G: Green, B: Blue
         Hex values so 0 to f
     */
-    color: #1100ff;
-    /* hex example w/ transparency (also hex 00: transparent, ff: opaque)*/
-    color: #1100ff80;
-    /* rgb example
+  color: #1100ff;
+  /* hex example w/ transparency (also hex 00: transparent, ff: opaque)*/
+  color: #1100ff80;
+  /* rgb example
         (red, green, blue)
     */
-    color: rgb(100, 0, 127);
-    /* rgba example (adds transparency 0.0 transparent, 1.0 opaque)*/
-    color: rgba(100, 0, 127, 0.3);
-    /* hsl example
+  color: rgb(100, 0, 127);
+  /* rgba example (adds transparency 0.0 transparent, 1.0 opaque)*/
+  color: rgba(100, 0, 127, 0.3);
+  /* hsl example
         hsl(hue, saturation, lightness)
     Hue is a degree on the color wheel (from 0 to 360):
         0 (or 360) is red, 120 is green, 240 is blue.
@@ -72,41 +77,42 @@ p {
         0% means a shade of gray and 100% is the full color.
     Lightness is also a percentage; 0% is black, 100% is white.
     */
-    color: hsl(15, 82%, 56%);
-    /* hsla example (transparency added: 0.0 transparent, 1.0 opaque)*/
-    color: hsla(15, 82%, 56%, 1.0);
-    /* Actually setting the stuff */
-    color: #000000;
-    background-color: #aaaaaa50;
-    /* Current color, currently what was set with hsla */
-    border: 10px solid currentColor;
+  color: hsl(15, 82%, 56%);
+  /* hsla example (transparency added: 0.0 transparent, 1.0 opaque)*/
+  color: hsla(15, 82%, 56%, 1);
+  /* Actually setting the stuff */
+  color: #000000;
+  background-color: #aaaaaa50;
+  /* Current color, currently what was set with hsla */
+  border: 10px solid currentColor;
 
-    /* Fonts */
-    /* Font families, can be single value*/
-    font-family: "Times New Roman";
-    /* Or comma separated list
+  /* Fonts */
+  /* Font families, can be single value*/
+  font-family: "Times New Roman";
+  /* Or comma separated list
         If list, browser will attempt to use each font, if it cant use/find, moves to next
         "font family names" will be in quotes, generic family names wont be
     */
-    font-family: "Times New Roman", sans-serif;
-    
-    font-size: 22px;
+  font-family: "Times New Roman", sans-serif;
 
-    /* Font weight
+  font-size: 22px;
+
+  /* Font weight
         Can be keyword such as bold, or number between 0 and 1000    
     */
-    font-weight: lighter;
-    font-weight: 1000;
-    /* Text alignment
+  font-weight: lighter;
+  font-weight: 1000;
+  /* Text alignment
         Justify makes all characters same length so lines will 'line' up
     */
-    text-align: justify;
-    direction: rtl;
+  text-align: justify;
+  direction: rtl;
 }
+
 /* Changes style of imgs */
 img {
-    height: auto;
-    width: 400px;
+  height: auto;
+  width: 400px;
 }
 /* Specificity 
     Prio list
@@ -123,3 +129,51 @@ img {
         color, font-size, font-family, etc. get inherited
     Most others dont
 */
+
+/* Box Model */
+.box-one {
+  background-color: blue;
+  /* Padding: increases space between edge of box and content inside */
+  padding: 20px;
+  /* Margin: increases space between box and other nearby boxes */
+  margin: 40px;
+  /* Border: adds space between margin and padding */
+  border: 5px solid cyan;
+}
+.box-two {
+  background-color: pink;
+  /* Padding: increases space between edge of box and content inside */
+  padding: 40px;
+  /* Margin: increases space between box and other nearby boxes */
+  margin: 20px;
+  /* Border: adds space between margin and padding */
+  border: 10px solid orange;
+}
+
+/*Block vs Inline*/
+.blockDisplay {
+  display: block;
+}
+.inlineDisplay {
+  display: inline;
+}
+
+/*FlexBox*/
+.flex-container {
+  display: flex;
+}
+/* this selector selects all divs inside of .flex-container */
+.flex-container div {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 100px;
+  flex: 1;
+}
+.indexNav {
+    display: flex;
+    color: black;
+    background-color: Purple;
+    border: 4px solid green;
+    height: 100px;
+    flex: 1;
+}
