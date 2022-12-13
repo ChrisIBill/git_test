@@ -1,0 +1,44 @@
+/* styles.css */
+/* Defines all divs to be blue */
+div {
+    color: blue;
+}
+
+/* Defines both alert-text and unread */
+.alert-text, .unread {
+    color: red;
+}
+/* Defines just alert-text */
+.alert-text {
+    background-color: black;
+}
+.unread {
+    background-color: aqua;
+}
+
+/* ID vs Class, dont really understand */
+#title {
+    background-color: green;
+}
+
+/* Unchained selector */
+.subsection {
+    background-color: gray;
+}
+/* Chained selector */
+.subsection.header {
+    color: purple;
+}
+
+/* Chained selector w/ ID instead of class */
+.subsection#preview {
+    color: green;
+}
+
+/* Descendant Combinator */
+.ancestor {
+    color: black;
+}
+.ancestor .child {
+    background-color: maroon;
+}
